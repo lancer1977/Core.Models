@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolyhydraGames.Core.Models", "Models\PolyhydraGames.Core.Models.csproj", "{B6C3A337-D262-4FFE-BCFD-13B151047237}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolyhydraGames.Core.Models.Test", "Tests\PolyhydraGames.Core.Models.Test.csproj", "{F66AFB49-9AA0-4E61-89AA-46499A338429}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6C3A337-D262-4FFE-BCFD-13B151047237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6C3A337-D262-4FFE-BCFD-13B151047237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6C3A337-D262-4FFE-BCFD-13B151047237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6C3A337-D262-4FFE-BCFD-13B151047237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F66AFB49-9AA0-4E61-89AA-46499A338429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66AFB49-9AA0-4E61-89AA-46499A338429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66AFB49-9AA0-4E61-89AA-46499A338429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66AFB49-9AA0-4E61-89AA-46499A338429}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABE93B3B-FB89-4AA7-970C-E8B53172C4B5}
+	EndGlobalSection
+EndGlobal
