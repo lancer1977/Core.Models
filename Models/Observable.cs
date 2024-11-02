@@ -6,9 +6,10 @@ using System.Reactive.Subjects;
 
 namespace PolyhydraGames.Core.Models;
 
-[Obsolete("Use ValueObservable<T> instead for thread saftey")]
-public class Observable<T> : IObservable<T>, IDisposable where T : class
+[Obsolete("Use ValueObservable<T> instead for thread saftey and better implementation")]
+public class SubjectObservable<T> : IObservable<T>
 {
+    private readonly bool _checkEquality;
     private T _value;
 
     public T Value
@@ -19,8 +20,11 @@ public class Observable<T> : IObservable<T>, IDisposable where T : class
 
     public bool SetValue(T value)
     {
-        if (EqualityComparer<T>.Default.Equals(_value, value))
+        if (_checkEquality && EqualityComparer<T>.Default.Equals(_value, value))
+        {
+
             return false;
+        }
 
 
         _value = value;
@@ -30,8 +34,13 @@ public class Observable<T> : IObservable<T>, IDisposable where T : class
 
     private readonly Subject<T> _subject = new();
     private readonly IObservable<T> _observable;
-    public Observable()
+    /// <summary>
+    /// Initializer
+    /// </summary>
+    /// <param name="checkEquality">This determines if we should update the object and notify every time a value is sent regardless of equality</param>
+    public SubjectObservable(bool checkEquality = true)
     {
+        _checkEquality = checkEquality;
         _observable = _subject.AsObservable();
     }
 
@@ -39,7 +48,7 @@ public class Observable<T> : IObservable<T>, IDisposable where T : class
     {
         return _observable.Subscribe(observer);
     }
-    public void Dispose()
+        public void Dispose()
     {
         _subject.Dispose();
     }
