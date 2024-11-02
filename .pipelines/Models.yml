@@ -1,13 +1,16 @@
 # Starter pipeline
-name: 1.0.0.$(rev:r)
+name: 1.0.1.$(rev:r)
 variables: 
 - name: Project.Path
-  value: $(Build.SourcesDirectory)/**/PolyhydraGames.Core.Models.csproj
+  value: /**/PolyhydraGames.Core.Models.csproj
 
 trigger:
   branches:
     include:
     - refs/heads/main
+  paths:
+    incude:
+      - Models
 
 jobs:
 - job: Phase_1 
