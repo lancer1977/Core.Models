@@ -1,5 +1,6 @@
+
 using NUnit.Framework;
-using PolyhydraGames.Core.Models.ContentTypes;
+using PolyhydraGames.Core.Models;
 
 namespace PolyhydraGames.Core.Models.Test;
 

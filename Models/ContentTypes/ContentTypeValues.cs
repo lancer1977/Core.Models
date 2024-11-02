@@ -1,4 +1,4 @@
-﻿namespace PolyhydraGames.Core.Models.ContentTypes;
+﻿namespace PolyhydraGames.Core.Models;
 
 public static class ContentTypeValues
 {

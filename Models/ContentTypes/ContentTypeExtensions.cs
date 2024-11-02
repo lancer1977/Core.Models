@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using PolyhydraGames.Core.Models.Attributes;
 
-namespace PolyhydraGames.Core.Models.ContentTypes;
+namespace PolyhydraGames.Core.Models;
 
 public static class ContentTypeExtensions
 {

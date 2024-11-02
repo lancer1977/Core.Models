@@ -1,6 +1,6 @@
 ﻿using PolyhydraGames.Core.Models.Attributes;
 
-namespace PolyhydraGames.Core.Models.ContentTypes;
+namespace PolyhydraGames.Core.Models;
 
 public enum ContentType
 {
