@@ -8,9 +8,6 @@ trigger:
   branches:
     include:
     - refs/heads/main
-  paths:
-    incude:
-      - Models
 
 jobs:
 - job: Phase_1 
