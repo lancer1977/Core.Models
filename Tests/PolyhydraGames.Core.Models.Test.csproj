@@ -10,12 +10,6 @@
   
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
   
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-  
-		<PackageReference Include="NUnit" Version="4.0.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Models\PolyhydraGames.Core.Models.csproj" />
+		<PackageReference Include="NUnit" Version="4.1.0" />
 	</ItemGroup>
 </Project>
