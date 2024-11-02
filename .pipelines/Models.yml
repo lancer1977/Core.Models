@@ -2,7 +2,7 @@
 name: 1.0.1.$(rev:r)
 variables: 
 - name: Project.Path
-  value: /**/PolyhydraGames.Core.Models.csproj
+  value: '**/PolyhydraGames.Core.Models.csproj'
 
 trigger:
   branches:
