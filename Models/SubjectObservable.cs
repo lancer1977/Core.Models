@@ -1,12 +1,10 @@
-﻿#nullable enable
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 
 namespace PolyhydraGames.Core.Models;
 
- 
 public class SubjectObservable<T> : IObservable<T>
 {
     private readonly bool _checkEquality;
@@ -48,10 +46,9 @@ public class SubjectObservable<T> : IObservable<T>
     {
         return _observable.Subscribe(observer);
     }
-        public void Dispose()
+    public void Dispose()
     {
         _subject.Dispose();
     }
 
 }
- 
