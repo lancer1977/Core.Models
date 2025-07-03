@@ -2,6 +2,7 @@ using NUnit.Framework;
 
 namespace PolyhydraGames.Core.Models.Test;
 
+[TestFixture]
 public class OneTimeUseBoolTests
 {
     [Test]
