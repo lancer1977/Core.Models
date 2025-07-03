@@ -17,6 +17,7 @@ namespace PolyhydraGames.Core.Models
         {
             get
             {
+                if (_value == null) return true;
                 if (ExpirationLength == null || ExpirationLength <= TimeSpan.Zero)
                     return false;
                 return CreationTime + ExpirationLength < DateTime.Now;

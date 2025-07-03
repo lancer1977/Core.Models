@@ -7,6 +7,16 @@ namespace PolyhydraGames.Core.Models.Test;
 public class CacheTests
 {
     [Test]
+    public void NullValue_Should_Be_Expired()
+    {
+        var cache = new Cache<string>(null,TimeSpan.FromSeconds(10));
+        Assert.That(cache.IsExpired, Is.True);
+        cache.Value = "Hello";
+        
+        Assert.That(cache.IsExpired, Is.False); 
+    }
+
+    [Test]
     public void Value_ShouldReturnSetValue_WhenNoExpiration()
     {
         var cache = new Cache<string>("Hello", null);
