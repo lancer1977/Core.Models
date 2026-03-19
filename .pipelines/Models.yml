@@ -19,6 +19,12 @@ jobs:
   steps:
   - checkout: self
   - task: DotNetCoreCLI@2
+    displayName: dotnet test
+    inputs:
+      command: test
+      projects: 'Tests/PolyhydraGames.Core.Models.Test.csproj'
+      arguments: '--configuration Release'
+  - task: DotNetCoreCLI@2
     displayName: dotnet build and pack
     inputs:
       command: pack
