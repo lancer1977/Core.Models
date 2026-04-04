@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using PolyhydraGames.Core.Interfaces;
 using PolyhydraGames.Core.Models.Serialization;
@@ -26,7 +26,29 @@ public static class JsonHelper
     public static T FromJson<T>(this string value, bool continueOnError = true)
     {
         if (Provider == null) throw new NullReferenceException("ISerialization provider was not set. Please initialize this before use");
-        return string.IsNullOrEmpty(value) ? default : Provider.DeserializeObject<T>(value, continueOnError);
+        if (string.IsNullOrEmpty(value))
+            return CreateDefault<T>();
+
+        try
+        {
+            return Provider.DeserializeObject<T>(value, continueOnError);
+        }
+        catch (Exception ex)
+        {
+            if (!continueOnError) throw;
+            Debug.WriteLine(ex.Message);
+            return CreateDefault<T>();
+        }
+    }
+
+    private static T CreateDefault<T>()
+    {
+        var value = default(T);
+        if (value == null)
+        {
+            return (T?)Activator.CreateInstance(typeof(T))!;
+        }
+        return value;
     }
     public static string ToJson(this object value)
     {

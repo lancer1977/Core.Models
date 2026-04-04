@@ -97,11 +97,11 @@ public class JsonHelperTests
     {
         var result = "42".FromJson<int>();
         Assert.That(result, Is.EqualTo(42));
-        
-        result = "true".FromJson<bool>();
-        Assert.That(result, Is.True);
-        
-        result = "\"world\"".FromJson<string>();
-        Assert.That(result, Is.EqualTo("world"));
+
+        var boolResult = "true".FromJson<bool>();
+        Assert.That(boolResult, Is.True);
+
+        var stringResult = "\"world\"".FromJson<string>();
+        Assert.That(stringResult, Is.EqualTo("world"));
     }
 }
